@@ -1,5 +1,13 @@
 console.clear();
 
+function handleUserLoginTest(userName) {
+  if (userName === "Jane Doe") {
+    showWelcomeMessage(userName, "admin");
+  } else {
+    showErrorMessage(`Unknown user "${userName}"`);
+  }
+}
+
 function handleUserLogin(onSuccess, onError, userName) {
   if (userName === "Jane Doe") {
     onSuccess(userName, "admin");
@@ -20,3 +28,6 @@ function showErrorMessage(errorMessage) {
 
 handleUserLogin(showWelcomeMessage, showErrorMessage, "Jane Doe");
 handleUserLogin(showWelcomeMessage, showErrorMessage, "Jane Doesn't");
+console.log("-------------------------------------");
+handleUserLoginTest("Jane Doe");
+handleUserLoginTest("Jane Doesn't");
